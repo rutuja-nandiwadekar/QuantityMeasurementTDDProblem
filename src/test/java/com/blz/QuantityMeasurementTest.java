@@ -35,18 +35,33 @@ public class QuantityMeasurementTest {
      */
     @Test
     public void givenSameReference_ShouldReturnTrue() {
-        Feet feet1 =new Feet(0.0);
-        Feet feet2 =new Feet(0.0) ;
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = new Feet(0.0) ;
         Assert.assertSame(feet1,feet1);
     }
 
     @Test
     public void givenNotSameReference_ShouldReturnTrue() {
-        Feet feet1 =new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
         Feet feet2 = new Feet(0.0) ;
         Assert.assertNotSame(feet2,feet1);
     }
 
+    /*
+       TC 1.4 to check equality of 2 types
+     */
+    @Test
+    public void giveSameTypes_shouldReturnEqual() {
+        Feet feet1 = new Feet();
+        Feet feet2 = new Feet();
+        Assert.assertEquals(feet1,feet2);
+    }
 
+    @Test
+    public void giveDifferentTypes_shouldReturnNotEqual() {
+        Feet feet = new Feet();
+        Inch inch = new Inch();
+        Assert.assertNotEquals(feet,inch);
+    }
 }
 
