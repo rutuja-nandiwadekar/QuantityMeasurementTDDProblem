@@ -131,5 +131,22 @@ public class QuantityMeasurementTest {
         Assert.assertNotSame(inch1, inch2);
     }
 
+    /*
+       TC 1.9 to check equality of 2 types
+     */
+    @Test
+    public void giveSameTypesInch_shouldReturnEqual() {
+        Inch inch1 = new Inch();
+        Inch inch2 = new Inch();
+        Assert.assertEquals(inch1, inch2);
+    }
+
+    @Test
+    public void giveDifferentTypesInch_shouldReturnNotEqual() {
+        Feet feet = new Feet();
+        Inch inch = new Inch();
+        Assert.assertNotEquals(feet,inch);
+    }
+
 }
 
