@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class QuantityMeasurementTest {
+    
     //test case for Feet
     /*
       TC 1.1 to check equality of 2 feet variables
@@ -29,7 +30,6 @@ public class QuantityMeasurementTest {
         Feet feet = new Feet(0.0);
         Assert.assertNotNull(feet);
     }
-
 
     /*
        TC 1.3 to check equality of Two references
@@ -84,7 +84,6 @@ public class QuantityMeasurementTest {
         feet2.setValue(10);
         Assert.assertNotEquals(feet1.getValue(),feet2.getValue(),0.0);
     }
-
 
 
     //test case for Inch
@@ -149,7 +148,7 @@ public class QuantityMeasurementTest {
     }
 
     /*
-      TC 1.10 to check equality of 2 values
+      TC 1.10 to check equality of 2 inch values
     */
     @Test
     public void givenSameInchValues_shouldReturnEqual() {
