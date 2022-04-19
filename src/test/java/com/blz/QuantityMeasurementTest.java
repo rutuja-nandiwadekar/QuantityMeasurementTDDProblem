@@ -20,5 +20,14 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(feet1, feet2);
     }
 
+    /*
+      TC 1.2 to check equality of null
+    */
+    @Test
+    public void givenNullFeetValue_shouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        Assert.assertNotNull(feet);
+    }
+
 }
 
