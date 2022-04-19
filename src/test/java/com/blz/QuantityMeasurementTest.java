@@ -29,5 +29,24 @@ public class QuantityMeasurementTest {
         Assert.assertNotNull(feet);
     }
 
+
+    /*
+       TC 1.3 to check equality of Two references
+     */
+    @Test
+    public void givenSameReference_ShouldReturnTrue() {
+        Feet feet1 =new Feet(0.0);
+        Feet feet2 =new Feet(0.0) ;
+        Assert.assertSame(feet1,feet1);
+    }
+
+    @Test
+    public void givenNotSameReference_ShouldReturnTrue() {
+        Feet feet1 =new Feet(0.0);
+        Feet feet2 = new Feet(0.0) ;
+        Assert.assertNotSame(feet2,feet1);
+    }
+
+
 }
 
