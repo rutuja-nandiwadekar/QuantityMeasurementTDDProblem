@@ -105,5 +105,14 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(inch1, inch2);
     }
 
+    /*
+     TC 1.7 to check equality of null
+   */
+    @Test
+    public void givenNullInchValue_shouldReturnFalse() {
+        Inch inch = new Inch(0.0);
+        Assert.assertNotNull(inch);
+    }
+
 }
 
