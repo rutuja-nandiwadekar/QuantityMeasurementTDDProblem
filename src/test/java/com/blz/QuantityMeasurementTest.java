@@ -114,5 +114,22 @@ public class QuantityMeasurementTest {
         Assert.assertNotNull(inch);
     }
 
+    /*
+       TC 1.8 to check equality of Two references
+     */
+    @Test
+    public void givenSameReferenceInch_ShouldReturnTrue() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
+        Assert.assertSame(inch1, inch1);
+    }
+
+    @Test
+    public void givenNotSameReferenceInch_ShouldReturnTrue() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
+        Assert.assertNotSame(inch1, inch2);
+    }
+
 }
 
