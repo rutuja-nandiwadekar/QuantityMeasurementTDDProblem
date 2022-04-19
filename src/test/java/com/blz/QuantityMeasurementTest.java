@@ -63,5 +63,25 @@ public class QuantityMeasurementTest {
         Inch inch = new Inch();
         Assert.assertNotEquals(feet,inch);
     }
+
+    /*
+       TC 1.5 to check equality of 2 values
+     */
+    @Test
+    public void givenSameValues_shouldReturnEqual() {
+        Feet feet1 = new Feet();
+        feet1.setValue(50);
+        Feet feet2 = new Feet();
+        feet2.setValue(50);
+        Assert.assertEquals(feet1.getValue(),feet2.getValue(),0.0);
+    }
+    @Test
+    public void givenDifferentValues_shouldReturnNotEqual() {
+        Feet feet1 = new Feet();
+        feet1.setValue(9);
+        Feet feet2 = new Feet();
+        feet2.setValue(10);
+        Assert.assertNotEquals(feet1.getValue(),feet2.getValue(),0.0);
+    }
 }
 
