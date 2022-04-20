@@ -226,5 +226,16 @@ public class QuantityMeasurementTestRefactor {
         value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
         Assert.assertEquals(value1,value2,0.0);
     }
+
+    //UC3
+    /*
+      TC 1.17 for comparing lengths 2 cm variables
+     */
+    @Test
+    public void given1CMAnd1CMWhenCompared_shouldReturnTrue() {
+        value2 = quantityMeasurement1.unitComparison(Units.CM, 5.0);
+        value1 = quantityMeasurement.unitComparison(Units.CM, 5.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
     
 }
