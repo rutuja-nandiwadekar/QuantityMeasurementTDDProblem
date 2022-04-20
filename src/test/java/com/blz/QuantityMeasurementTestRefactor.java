@@ -196,4 +196,14 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
+    /*
+      TC 1.14 for comparing lengths 4: 1 yd = 36 in
+     */
+    @Test
+    public void given36InchAnd1YardWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
+        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
 }
