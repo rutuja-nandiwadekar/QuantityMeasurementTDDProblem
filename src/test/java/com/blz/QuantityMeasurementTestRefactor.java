@@ -1,9 +1,21 @@
 package com.blz;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class QuantityMeasurementTestRefactor {
+
+    private QuantityMeasurement quantityMeasurement;
+    private QuantityMeasurement quantityMeasurement1;
+    private QuantityMeasurementTestRefactor quantityMeasurementTestRefactor;
+    
+    @Before
+    public void init(){
+        quantityMeasurement = new QuantityMeasurement();
+        quantityMeasurement1 = new QuantityMeasurement();
+        quantityMeasurementTestRefactor = new QuantityMeasurementTestRefactor();
+    }
 
     //test case for Feet
     /*
@@ -12,7 +24,6 @@ public class QuantityMeasurementTestRefactor {
     @Test
 
     public void given0FeetAnd0Feet_ShouldReturnEqual()  {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
         double value2 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
         Assert.assertEquals(value1, value2, 0.0);
@@ -20,7 +31,6 @@ public class QuantityMeasurementTestRefactor {
 
     @Test
     public void given0FeetAnd1Feet_ShouldReturnNotEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
         double value2 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
@@ -31,7 +41,6 @@ public class QuantityMeasurementTestRefactor {
     */
     @Test
     public void givenNullFeetValue_shouldReturnFalse() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.FEET,0.0);
         Assert.assertNotNull(value1);
     }
@@ -41,14 +50,11 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void givenSameReference_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Assert.assertSame(quantityMeasurement,quantityMeasurement);
     }
 
     @Test
     public void givenNotSameReference_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
         Assert.assertNotSame(quantityMeasurement,quantityMeasurement1);
     }
 
@@ -57,14 +63,11 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void giveSameTypes_shouldReturnEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Assert.assertEquals(quantityMeasurement,quantityMeasurement);
     }
 
     @Test
     public void giveDifferentTypes_shouldReturnNotEqual() {
-        QuantityMeasurementTestRefactor quantityMeasurementTestRefactor = new QuantityMeasurementTestRefactor();
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Assert.assertNotEquals(quantityMeasurementTestRefactor,quantityMeasurement);
     }
 
@@ -73,18 +76,14 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void givenSameValues_shouldReturnEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
         double value2 = quantityMeasurement1.unitComparison(Units.FEET, 0.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
     @Test
     public void givenDifferentValues_shouldReturnNotEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
         double value2 = quantityMeasurement1.unitComparison(Units.FEET, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
@@ -95,7 +94,6 @@ public class QuantityMeasurementTestRefactor {
     */
     @Test
     public void given0InchAnd0Inch_ShouldReturnEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
         double value2 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
         Assert.assertEquals(value1, value2, 0.0);
@@ -103,7 +101,6 @@ public class QuantityMeasurementTestRefactor {
 
     @Test
     public void given0InchAnd1Inch_ShouldReturnNotEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
         double value2 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
@@ -114,7 +111,6 @@ public class QuantityMeasurementTestRefactor {
    */
     @Test
     public void givenNullInchValue_shouldReturnFalse() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.INCH,0.0);
         Assert.assertNotNull(value1);
     }
@@ -124,37 +120,29 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void givenSameReferenceInch_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Assert.assertSame(quantityMeasurement,quantityMeasurement);
     }
 
     @Test
     public void givenNotSameReferenceInch_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
         Assert.assertNotSame(quantityMeasurement,quantityMeasurement1);
     }
 
     /*
-        TC 1.5 to check equality of 2 values
+        TC 1.10 to check equality of 2 values
       */
     @Test
     public void givenSameInchValues_shouldReturnEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
         double value2 = quantityMeasurement1.unitComparison(Units.INCH, 0.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
     @Test
     public void givenDifferentInchValues_shouldReturnNotEqual() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
         double value2 = quantityMeasurement1.unitComparison(Units.INCH, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
-
 
 }
