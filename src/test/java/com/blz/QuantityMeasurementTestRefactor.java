@@ -25,4 +25,14 @@ public class QuantityMeasurementTestRefactor {
         double value2 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
+
+    /*
+      TC 1.2 to check equality of null
+    */
+    @Test
+    public void givenNullFeetValue_shouldReturnFalse() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.FEET,0.0);
+        Assert.assertNotNull(value1);
+    }
 }
