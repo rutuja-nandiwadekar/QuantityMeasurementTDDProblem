@@ -119,6 +119,21 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotNull(value1);
     }
 
-    
+    /*
+       TC 1.8 to check equality of Two references
+     */
+    @Test
+    public void givenSameReferenceInch_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Assert.assertSame(quantityMeasurement,quantityMeasurement);
+    }
+
+    @Test
+    public void givenNotSameReferenceInch_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        Assert.assertNotSame(quantityMeasurement,quantityMeasurement1);
+    }
+
 
 }
