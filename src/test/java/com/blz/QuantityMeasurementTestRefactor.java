@@ -52,5 +52,21 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotSame(quantityMeasurement,quantityMeasurement1);
     }
 
+    /*
+       TC 1.4 to check equality of 2 types
+     */
+    @Test
+    public void giveSameTypes_shouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Assert.assertEquals(quantityMeasurement,quantityMeasurement);
+    }
+
+    @Test
+    public void giveDifferentTypes_shouldReturnNotEqual() {
+        QuantityMeasurementTestRefactor quantityMeasurementTestRefactor = new QuantityMeasurementTestRefactor();
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Assert.assertNotEquals(quantityMeasurementTestRefactor,quantityMeasurement);
+    }
+
 
 }
