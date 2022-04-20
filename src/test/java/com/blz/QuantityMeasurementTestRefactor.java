@@ -9,7 +9,8 @@ public class QuantityMeasurementTestRefactor {
     private QuantityMeasurement quantityMeasurement;
     private QuantityMeasurement quantityMeasurement1;
     private QuantityMeasurementTestRefactor quantityMeasurementTestRefactor;
-    
+    static double value1;
+    static double value2;
     @Before
     public void init(){
         quantityMeasurement = new QuantityMeasurement();
@@ -25,15 +26,15 @@ public class QuantityMeasurementTestRefactor {
     @Test
 
     public void given0FeetAnd0Feet_ShouldReturnEqual()  {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
-        double value2 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+        value2 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
 
     @Test
     public void given0FeetAnd1Feet_ShouldReturnNotEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
-        double value2 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+        value2 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
@@ -42,7 +43,7 @@ public class QuantityMeasurementTestRefactor {
     */
     @Test
     public void givenNullFeetValue_shouldReturnFalse() {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET,0.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET,0.0);
         Assert.assertNotNull(value1);
     }
 
@@ -77,15 +78,15 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void givenSameValues_shouldReturnEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.FEET, 0.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+       value2 = quantityMeasurement1.unitComparison(Units.FEET, 0.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
     @Test
     public void givenDifferentValues_shouldReturnNotEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.FEET, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+        value2 = quantityMeasurement1.unitComparison(Units.FEET, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
@@ -95,15 +96,15 @@ public class QuantityMeasurementTestRefactor {
     */
     @Test
     public void given0InchAnd0Inch_ShouldReturnEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
-        double value2 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        value2 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
 
     @Test
     public void given0InchAnd1Inch_ShouldReturnNotEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
-        double value2 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        value2 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
 
@@ -112,7 +113,7 @@ public class QuantityMeasurementTestRefactor {
    */
     @Test
     public void givenNullInchValue_shouldReturnFalse() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH,0.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH,0.0);
         Assert.assertNotNull(value1);
     }
 
@@ -134,15 +135,15 @@ public class QuantityMeasurementTestRefactor {
       */
     @Test
     public void givenSameInchValues_shouldReturnEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.INCH, 0.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        value2 = quantityMeasurement1.unitComparison(Units.INCH, 0.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
     @Test
     public void givenDifferentInchValues_shouldReturnNotEqual() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.INCH, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        value2 = quantityMeasurement1.unitComparison(Units.INCH, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
@@ -154,15 +155,15 @@ public class QuantityMeasurementTestRefactor {
 
     @Test
     public void given0YardAnd0YardWhenCompared_shouldReturnTrue() {
-        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 0.0);
+        value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 0.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
     @Test
     public void given0YardAnd1YardWhenCompared_shouldReturnFalse() {
-        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
@@ -171,8 +172,8 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given3FeetAnd1YardWhenCompared_shouldReturnTrue() {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
@@ -181,8 +182,8 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given1FeetAnd1YardWhenCompared_shouldReturnFalse() {
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
@@ -191,8 +192,8 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given1InchAnd1YardWhenCompared_shouldReturnFalse() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
@@ -201,8 +202,8 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given1YardAnd36InchWhenCompared_shouldReturnTrue() {
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
@@ -211,8 +212,8 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given36InchAnd1YardWhenCompared_shouldReturnTrue() {
-        double value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.INCH, 36.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
@@ -221,9 +222,9 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given1Yard3FeetWhenCompared_shouldReturnTrue() {
-        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
-        double value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
+        value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.FEET, 3.0);
         Assert.assertEquals(value1,value2,0.0);
     }
-
+    
 }
