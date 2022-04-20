@@ -68,5 +68,46 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotEquals(quantityMeasurementTestRefactor,quantityMeasurement);
     }
 
+    /*
+       TC 1.5 to check equality of 2 values
+     */
+    @Test
+    public void givenSameValues_shouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        double value2 = quantityMeasurement1.unitComparison(Units.FEET, 0.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    @Test
+    public void givenDifferentValues_shouldReturnNotEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 0.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        double value2 = quantityMeasurement1.unitComparison(Units.FEET, 1.0);
+        Assert.assertNotEquals(value1,value2,0.0);
+    }
+
+    //test case for Inch
+    /*
+      TC 1.6 to check equality of 2 inch variables
+    */
+    @Test
+    public void given0InchAnd0Inch_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        double value2 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    @Test
+    public void given0InchAnd1Inch_ShouldReturnNotEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        double value2 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+
 
 }
