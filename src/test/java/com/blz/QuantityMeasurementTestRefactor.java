@@ -17,6 +17,7 @@ public class QuantityMeasurementTestRefactor {
         quantityMeasurementTestRefactor = new QuantityMeasurementTestRefactor();
     }
 
+    //UC1
     //test case for Feet
     /*
       TC 1.1 to check equality of 2 feet variables
@@ -142,6 +143,26 @@ public class QuantityMeasurementTestRefactor {
     public void givenDifferentInchValues_shouldReturnNotEqual() {
         double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
         double value2 = quantityMeasurement1.unitComparison(Units.INCH, 1.0);
+        Assert.assertNotEquals(value1,value2,0.0);
+    }
+
+
+    //UC2
+    /*
+      TC 1.11 for comparing lengths of 2 yard variables
+     */
+
+    @Test
+    public void given0YardAnd0YardWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 0.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    @Test
+    public void given0YardAnd1YardWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 0.0);
+        double value2 = quantityMeasurement1.unitComparison(Units.YARD, 1.0);
         Assert.assertNotEquals(value1,value2,0.0);
     }
 
