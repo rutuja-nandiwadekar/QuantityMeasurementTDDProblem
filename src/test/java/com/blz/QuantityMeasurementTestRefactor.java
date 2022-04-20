@@ -35,4 +35,22 @@ public class QuantityMeasurementTestRefactor {
         double value1 = quantityMeasurement.unitComparison(Units.FEET,0.0);
         Assert.assertNotNull(value1);
     }
+
+    /*
+       TC 1.3 to check equality of Two references
+     */
+    @Test
+    public void givenSameReference_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Assert.assertSame(quantityMeasurement,quantityMeasurement);
+    }
+
+    @Test
+    public void givenNotSameReference_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        Assert.assertNotSame(quantityMeasurement,quantityMeasurement1);
+    }
+
+
 }
