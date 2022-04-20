@@ -109,5 +109,16 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotEquals(value1, value2, 0.0);
     }
 
+    /*
+     TC 1.7 to check equality of null
+   */
+    @Test
+    public void givenNullInchValue_shouldReturnFalse() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.INCH,0.0);
+        Assert.assertNotNull(value1);
+    }
+
+    
 
 }
