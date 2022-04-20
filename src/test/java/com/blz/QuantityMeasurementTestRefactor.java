@@ -135,5 +135,26 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotSame(quantityMeasurement,quantityMeasurement1);
     }
 
+    /*
+        TC 1.5 to check equality of 2 values
+      */
+    @Test
+    public void givenSameInchValues_shouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        double value2 = quantityMeasurement1.unitComparison(Units.INCH, 0.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    @Test
+    public void givenDifferentInchValues_shouldReturnNotEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 0.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        double value2 = quantityMeasurement1.unitComparison(Units.INCH, 1.0);
+        Assert.assertNotEquals(value1,value2,0.0);
+    }
+
 
 }
