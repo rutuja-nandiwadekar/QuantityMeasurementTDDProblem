@@ -7,6 +7,7 @@ public class Feet {
 
 
     public Feet(double value) {
+
         this.value =value;
     }
 
