@@ -21,5 +21,14 @@ public class VolumeMeasurementTest {
         double value2 = quantityMeasurement.unitConversion(VolumeUnits.GALLON, 0.0);
         Assert.assertEquals(value1, value2, 0);
     }
-    
+
+    /*
+     TC 1.2 to compare volumes in litre and gallon /1 gallon = 3.78 litres
+   */
+    @Test
+    public void given1GallonAndThreePointSevenEightLitersWhenEqual_ShouldReturnEqual() {
+        double value1 = quantityMeasurement.unitConversion(VolumeUnits.GALLON, 1.0);
+        double value2 = quantityMeasurement.unitConversion(VolumeUnits.LITRE, 3.78);
+        Assert.assertEquals(value1, value2, 0);
+    }
 }
