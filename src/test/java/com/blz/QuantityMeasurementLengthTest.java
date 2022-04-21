@@ -315,5 +315,4 @@ public class QuantityMeasurementLengthTest {
         value2= quantityMeasurement.unitComparison(Units.INCH, 4);
         Assert.assertEquals(value1, value2,0.0);
     }
-
 }
