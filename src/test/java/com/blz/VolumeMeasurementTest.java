@@ -42,6 +42,7 @@ public class VolumeMeasurementTest {
         Assert.assertEquals(value1, value2, 0);
     }
 
+    //UC6
     /*
      TC 1.4 to add volumes in litres - 1 gallon + 3.78 litres = 7.57 litres
    */
@@ -49,6 +50,16 @@ public class VolumeMeasurementTest {
     public void given1GallonAndThreePointSevenEightLitersWhenAdded_ShouldReturnSevenPointFiveSixLiters() {
         double value1 = quantityMeasurement.unitAddition(VolumeUnits.GALLON,1.0,VolumeUnits.LITRE,3.78);
         double value2 = quantityMeasurement.unitConversion(VolumeUnits.LITRE, 7.56);
+        Assert.assertEquals(value1, value2, 0);
+    }
+
+    /*
+     TC 1.5 to add volumes in litres - 1 litre + 1000 ml = 2 litres
+   */
+    @Test
+    public void given1LitreAnd1000MLWhenAdded_ShouldReturn2Liters() {
+        double value1 = quantityMeasurement.unitAddition(VolumeUnits.LITRE,1.0,VolumeUnits.MILLILITER,1000);
+        double value2 = quantityMeasurement.unitConversion(VolumeUnits.LITRE, 2.0);
         Assert.assertEquals(value1, value2, 0);
     }
 
