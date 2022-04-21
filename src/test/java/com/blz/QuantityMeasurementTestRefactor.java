@@ -285,4 +285,14 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotEquals(value1, value2, 0.0);
     }
 
+    /*
+       TC 1.22 for comparing lengths 1 ft = 30cm
+     */
+    @Test
+    public void given1FeetAnd30CMWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
+        double value2 = quantityMeasurement.unitComparison(Units.CM, 30.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
 }
