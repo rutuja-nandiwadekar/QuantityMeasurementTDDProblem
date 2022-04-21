@@ -335,4 +335,14 @@ public class QuantityMeasurementLengthTest {
         value2= quantityMeasurement.unitComparison(Units.INCH, 24);
         Assert.assertEquals(value1, value2,0.0);
     }
+
+    /*
+       TC 1.27 to add two lengths in inches 2 in + 2.5 cm = 3 in
+    */
+    @Test
+    public void given2InchAnd2CM_WhenAdded_ShouldReturnCorrect() {
+        value1 = quantityMeasurement.unitAddition(Units.INCH, 2.0, Units.CM, 2.5);
+        value2= quantityMeasurement.unitComparison(Units.INCH, 3);
+        Assert.assertEquals(value1, value2,0.0);
+    }
 }
