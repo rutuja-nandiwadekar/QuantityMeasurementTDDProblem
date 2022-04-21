@@ -264,4 +264,16 @@ public class QuantityMeasurementTestRefactor {
         double value2 = quantityMeasurement.unitComparison(Units.CM, 5.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
+
+    /*
+       TC 1.20 for comparing lengths 1yd != 1cm
+     */
+    @Test
+    public void given1YardAnd1CMWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
+        double value2 = quantityMeasurement.unitComparison(Units.CM, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+
+
 }
