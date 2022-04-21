@@ -233,9 +233,26 @@ public class QuantityMeasurementTestRefactor {
      */
     @Test
     public void given1CMAnd1CMWhenCompared_shouldReturnTrue() {
-        value2 = quantityMeasurement1.unitComparison(Units.CM, 5.0);
-        value1 = quantityMeasurement.unitComparison(Units.CM, 5.0);
+        value2 = quantityMeasurement1.unitComparison(Units.CM, 1.0);
+        value1 = quantityMeasurement.unitComparison(Units.CM, 1.0);
         Assert.assertEquals(value1,value2,0.0);
+    }
+
+    @Test
+    public void given1CMAnd0CMWhenCompared_shouldReturnFalse() {
+        value1 = quantityMeasurement1.unitComparison(Units.CM, 0.0);
+        value2 = quantityMeasurement.unitComparison(Units.CM, 1.0);
+        Assert.assertNotEquals(value1,value2,0.0);
+    }
+
+    /*
+       TC 1.18 for comparing lengths 1in != 1cm
+     */
+    @Test
+    public void given1InchAnd1CMWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 1.0);
+        double value2 = quantityMeasurement.unitComparison(Units.CM, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
     }
     
 }
