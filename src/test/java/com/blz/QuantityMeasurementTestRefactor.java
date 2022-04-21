@@ -275,5 +275,14 @@ public class QuantityMeasurementTestRefactor {
         Assert.assertNotEquals(value1, value2, 0.0);
     }
 
+    /*
+       TC 1.21 for comparing lengths 1ft != 1cm
+     */
+    @Test
+    public void given1FeetAnd1CMWhenCompared_shouldReturnFalse() {
+        double value1 = quantityMeasurement.unitComparison(Units.FEET, 1.0);
+        double value2 = quantityMeasurement.unitComparison(Units.CM, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
 
 }
