@@ -31,4 +31,15 @@ public class VolumeMeasurementTest {
         double value2 = quantityMeasurement.unitConversion(VolumeUnits.LITRE, 3.78);
         Assert.assertEquals(value1, value2, 0);
     }
+
+    /*
+     TC 1.3 to compare volumes in litre and gallon /1 litre = 1000 ml
+   */
+    @Test
+    public void given1LitreAnd1000MLWhenEqual_ShouldReturnEqual() {
+        double value1 = quantityMeasurement.unitConversion(VolumeUnits.LITRE, 1.0);
+        double value2 = quantityMeasurement.unitConversion(VolumeUnits.MILLILITER, 1000.0);
+        Assert.assertEquals(value1, value2, 0);
+    }
+
 }
