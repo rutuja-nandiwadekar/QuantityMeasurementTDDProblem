@@ -254,5 +254,14 @@ public class QuantityMeasurementTestRefactor {
         double value2 = quantityMeasurement.unitComparison(Units.CM, 1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
-    
+
+    /*
+       TC 1.19 for comparing lengths 2in = 5cm
+     */
+    @Test
+    public void given2InchAnd5CMWhenCompared_shouldReturnTrue() {
+        double value1 = quantityMeasurement.unitComparison(Units.INCH, 2.0);
+        double value2 = quantityMeasurement.unitComparison(Units.CM, 5.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
 }
