@@ -1,4 +1,6 @@
-package com.blz;
+package com.my.approach;
+import com.my.approach.Feet;
+import com.my.approach.Inch;
 import org.junit.Assert;
 import org.junit.Test;
 

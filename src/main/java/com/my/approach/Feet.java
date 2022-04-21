@@ -1,6 +1,4 @@
-package com.blz;
-
-import java.util.Objects;
+package com.my.approach;
 
 public class Feet {
     private  double value;

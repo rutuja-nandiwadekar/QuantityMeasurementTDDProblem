@@ -4,18 +4,18 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class QuantityMeasurementTestRefactor {
+public class QuantityMeasurementLengthTest {
 
     private QuantityMeasurement quantityMeasurement;
     private QuantityMeasurement quantityMeasurement1;
-    private QuantityMeasurementTestRefactor quantityMeasurementTestRefactor;
+    private QuantityMeasurementLengthTest quantityMeasurementTestRefactor;
     static double value1;
     static double value2;
     @Before
     public void init(){
         quantityMeasurement = new QuantityMeasurement();
         quantityMeasurement1 = new QuantityMeasurement();
-        quantityMeasurementTestRefactor = new QuantityMeasurementTestRefactor();
+        quantityMeasurementTestRefactor = new QuantityMeasurementLengthTest();
     }
 
     //UC1
@@ -303,6 +303,17 @@ public class QuantityMeasurementTestRefactor {
         double value1 = quantityMeasurement.unitComparison(Units.YARD, 1.0);
         double value2 = quantityMeasurement.unitComparison(Units.CM, 90.0);
         Assert.assertEquals(value1, value2, 0.0);
+    }
+
+    //UC4
+    /*
+       TC 1.24 to add two lengths in inches 2 in + 2 in = 4 in
+    */
+    @Test
+    public void given2InchAnd2Inch_WhenAdded_ShouldReturnCorrect() {
+        value1 = quantityMeasurement.unitAddition(Units.INCH, 2.0, Units.INCH, 2.0);
+        value2= quantityMeasurement.unitComparison(Units.INCH, 4);
+        Assert.assertEquals(value1, value2,0.0);
     }
 
 }

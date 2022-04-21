@@ -1,4 +1,4 @@
-package com.blz;
+package com.my.approach;
 
 public class Inch {
     private double value;

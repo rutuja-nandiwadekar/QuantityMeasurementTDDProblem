@@ -9,4 +9,12 @@ public class QuantityMeasurement {
     public double unitComparison(Units units, double value) {
         return value * units.unit;
     }
+
+
+
+
+    public double unitAddition(Units unit1, double value1, Units unit2, double value2) {
+        return unitComparison(unit1,value1)+ unitComparison(unit2,value2);
+
+    }
 }
