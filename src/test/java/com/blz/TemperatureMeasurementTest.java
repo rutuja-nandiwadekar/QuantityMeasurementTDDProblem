@@ -32,5 +32,14 @@ public class TemperatureMeasurementTest {
         double value2 = quantityMeasurement.unitConversion(TemperatureUnits.FAHRENHEIT, 0.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
+    /*
+      TC 1.3 to equate temp 212 F = 100 C
+     */
+    @Test
+    public void given212FahrenheitAnd100Celsious_ShouldReturnNotEqual() {
+        double value1 = quantityMeasurement.unitConversion(TemperatureUnits.FAHRENHEIT, 212.0);
+        double value2 = quantityMeasurement.unitConversion(TemperatureUnits.CELSIOUS, 100.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
 
 }
