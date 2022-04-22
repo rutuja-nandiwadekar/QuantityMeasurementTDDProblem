@@ -43,5 +43,15 @@ public class WeightMeasurementTest {
         Assert.assertEquals(value1, value2, 0);
     }
 
+    /*
+      TC 1.4 to compare weights 1 kg = 1000 grams
+     */
+    @Test
+    public void given1KGAnd1000GramsWhenEqual_ShouldReturnEqual() {
+        double value1 = quantityMeasurement.unitConversion(WeightUnits.KG, 1.0);
+        double value2 = quantityMeasurement.unitConversion(WeightUnits.GRAM, 1000.0);
+        Assert.assertEquals(value1, value2, 0);
+    }
+
 
 }
