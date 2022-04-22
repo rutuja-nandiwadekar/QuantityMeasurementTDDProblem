@@ -1,9 +1,10 @@
 package com.blz;
 
 public class QuantityMeasurement {
-    double feet;
-    double inch;
-    double yard;
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 
 
     public double unitConversion(Units units, double value) {
