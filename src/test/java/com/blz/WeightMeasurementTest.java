@@ -62,5 +62,13 @@ public class WeightMeasurementTest {
         Assert.assertEquals(value1, value2, 0);
     }
 
-
+    /*
+      TC 1.6 to add weights 1 tonne + 1000 gm = 1001 kg
+    */
+    @Test
+    public void given1TonneAnd1000GramsWhenAdded_ShouldReturn1001KG() {
+        double value1 = quantityMeasurement.unitAddition(WeightUnits.TONNE, 1.0, WeightUnits.GRAM, 1000.0);
+        double value2 = quantityMeasurement.unitConversion(WeightUnits.KG, 1001.0);
+        Assert.assertEquals(value1, value2, 0);
+    }
 }
