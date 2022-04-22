@@ -33,5 +33,15 @@ public class WeightMeasurementTest {
         Assert.assertEquals(value1, value2, 0);
     }
 
+    /*
+      TC 1.3 to compare weights in tonne
+    */
+    @Test
+    public void given0TonneAnd0TonneWhenEqual_ShouldReturnEqual() {
+        double value1 = quantityMeasurement.unitConversion(WeightUnits.TONNE, 0.0);
+        double value2 = quantityMeasurement.unitConversion(WeightUnits.TONNE, 0.0);
+        Assert.assertEquals(value1, value2, 0);
+    }
+
 
 }
