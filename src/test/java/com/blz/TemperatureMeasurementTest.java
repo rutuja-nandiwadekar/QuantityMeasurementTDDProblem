@@ -23,4 +23,14 @@ public class TemperatureMeasurementTest {
         Assert.assertEquals(value1, value2, 0.0);
     }
 
+    /*
+      TC 1.2 to compare temp in Fahrenheit
+    */
+    @Test
+    public void given0FahrenheitAnd0Fahrenheit_ShouldReturnEqual() {
+        double value1 = quantityMeasurement.unitConversion(TemperatureUnits.FAHRENHEIT, 0.0);
+        double value2 = quantityMeasurement.unitConversion(TemperatureUnits.FAHRENHEIT, 0.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
 }
